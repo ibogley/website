@@ -1,0 +1,44 @@
+* {
+  font-family: sans-serif;
+}
+
+
+
+.topbanner {
+  background: url("https://media-exp1.licdn.com/dms/image/C5616AQEjpfvwyKZptw/profile-displaybackgroundimage-shrink_200_800/0?e=1599091200&v=beta&t=1RaLFhs61Op-WdyXsXYopq0KMlctWYBD2NeyjuI9E78") no-repeat center;
+  background-size: 100% 100%;
+  height: 250px;
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: lightgreen;
+  overflow:hidden;
+}
+
+.topnav a {
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.profilepic {
+  border-radius: 50%;
+  border: 5px solid lightyellow;
+  height: 240px;
+}
