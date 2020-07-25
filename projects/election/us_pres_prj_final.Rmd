@@ -2,7 +2,7 @@
 title: "US Presidential Election Project"
 author: "Ian Bogley"
 date: "7/16/2020"
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
