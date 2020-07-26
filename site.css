@@ -46,8 +46,8 @@
 
 iframe {
   display: block;
-  width: 100px;
+  width: 50%;
   height: 50px;
-  margin: 0 auto;
+  margin: auto;
   border-style: none;
 }
