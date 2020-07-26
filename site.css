@@ -43,3 +43,10 @@
   border: 5px solid lightyellow;
   height: 240px;
 }
+
+.iframe {
+  display: block;
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+}
