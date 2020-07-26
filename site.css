@@ -44,9 +44,10 @@
   height: 240px;
 }
 
-.iframe {
+iframe {
   display: block;
   width: 100px;
   height: 50px;
   margin: 0 auto;
+  border-style: none;
 }
