@@ -53,6 +53,7 @@ iframe {
 }
 
 .contact {
+<<<<<<< HEAD
   display: block;
   margin:auto;
   text-align: center;
@@ -75,3 +76,7 @@ display: inline;
  margin: 1em;
  border: 1px solid black;
 }
+=======
+  text-align: center;
+}
+>>>>>>> 80d26669b54becb2f3ce7d5f87557f29b92c2b70
