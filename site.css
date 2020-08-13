@@ -5,8 +5,7 @@
 
 .topbanner {
   background: url("https://media-exp1.licdn.com/dms/image/C5616AQEjpfvwyKZptw/profile-displaybackgroundimage-shrink_200_800/0?e=1599091200&v=beta&t=1RaLFhs61Op-WdyXsXYopq0KMlctWYBD2NeyjuI9E78") no-repeat center;
-  background-size: 100% 100%;
-  height: 350px;
+  background-size: cover;
 }
 
 .topnav {
