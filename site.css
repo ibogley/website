@@ -92,3 +92,8 @@ h2 {
   background-color: lightblue;
   text-align: center;
 }
+
+.side a:hover {
+  background-color: #ddd;
+  color: black;  
+}
