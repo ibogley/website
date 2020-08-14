@@ -74,3 +74,21 @@ h2 {
   margin: 0 auto;
   position:relative;
 }
+
+.content {
+  margin-top: 10px;
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  padding: 1em;
+  flex-basis: 50%;
+}
+
+.side {
+  flex: 1;
+  padding: 1em;
+  background-color: lightblue;
+  text-align: center;
+}
