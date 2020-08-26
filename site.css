@@ -64,6 +64,10 @@ h2 {
   margin-left: 20px;
 }
 
+ul {
+  margin-right: 100px;
+}
+
 .button {
   float: left;
 }
@@ -83,6 +87,7 @@ h2 {
 .main {
   flex: 1;
   padding: 1em;
+  padding-right: 4em;
   flex-basis: 50%;
 }
 
@@ -95,5 +100,5 @@ h2 {
 
 .side a:hover {
   background-color: #ddd;
-  color: black;  
+  color: black;
 }
