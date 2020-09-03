@@ -106,5 +106,6 @@ ul {
 .pdf {
   display: block;
   margin-top: 1em;
-  border: 5px solid lightblue;
+  border: 5px solid black;
+  padding: 2px;
 }
