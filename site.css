@@ -102,3 +102,9 @@ ul {
   background-color: #ddd;
   color: black;
 }
+
+.pdf {
+  display: block;
+  margin-top: 1em;
+  border: 5px solid lightblue;
+}
