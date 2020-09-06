@@ -15,7 +15,7 @@ library(pacman)
 p_load(rvest,tidyverse,data.table,janitor,cowplot)
 ```
 
-Now let's scrape some data on NFL salaries for 2019, which we will combine with win-loss data from wikipedia. Let's focus on 
+Now let's scrape some data on NFL salaries for 2019, which we will combine with win-loss data from wikipedia. Let's focus on regular season games from the 2019 season to start.
 ```{r data, warning=FALSE}
 #exp = expenditures (portion of salary caps on each position)
 source_exp_19 <- read_html("https://www.spotrac.com/nfl/positional/breakdown/2019/") %>%
@@ -28,14 +28,14 @@ exp_19 <- source_exp_19[[1]] %>%
     Team = NULL
     )
 
-exp_19[2:11] <- lapply(exp_19[2:11],function(x) {as.numeric(gsub("\\s([0-9]+).[0-9]M","",x))}) 
+exp_19[2:11] <- lapply(exp_19[2:11],function(x) {as.numeric(gsub("\\s([0-9]+).[0-9]M","",x))})
 
 pos_exp_19 <- exp_19 %>% pivot_longer(!c(team, Players)) %>%
   rename(position = name, salary = value)
 
 source_win_19 <- read_html("https://en.wikipedia.org/wiki/2019_NFL_season") %>%
   html_nodes("#mw-content-text > div.mw-parser-output > div:nth-child(68) > table") %>%
-  html_table(fill = TRUE) 
+  html_table(fill = TRUE)
 
 #win = win loss statistics
 win_19 <- source_win_19[[1]] %>%
@@ -117,19 +117,19 @@ pimage <- axis_canvas(p,axis = 'x')+
 ggdraw(insert_xaxis_grob(p,pimage,position = "bottom"))
 ```
 
-This graph is conclusive evidence that the Miami Dolphins tanked. Ripperino to season pass holders. 
+This graph is conclusive evidence that the Miami Dolphins tanked. Ripperino to season pass holders.
 
 However, after some testing I've failed to find significant evidence of significant correlation between positional spending of any kind and win-loss percentage. Also, some light literature review seems to infer that Offense and Defense are each generally equivalent in their effect on team success, implying that differences in positional spending effectiveness might depend on the individual team's approach to offense or defense.
 
 Let's try to use point differential instead, starting with a linear model between point differential and win-loss percentage.
 
 ```{r lm1}
-lm1 <- naruki_is_santa %>% 
-  lm(formula = PCT ~ PD) 
+lm1 <- naruki_is_santa %>%
+  lm(formula = PCT ~ PD)
 summary(lm1)
 ```
 
-We can see that the relationship is significant, and explains approximately 75% of the variation in win loss percentage. 
+We can see that the relationship is significant, and explains approximately 75% of the variation in win loss percentage.
 
 ```{r plot3}
 naruki_is_santa %>%
@@ -152,4 +152,3 @@ naruki_is_santa %>%
     label = paste("R-squared:",round(summary(lm1)$r.squared,digits = 4))
   )
 ```
-
