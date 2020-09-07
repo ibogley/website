@@ -16,7 +16,7 @@ p_load(rvest,tidyverse,data.table,janitor,cowplot)
 ```
 
 Now let's scrape some data on NFL salaries for 2019, which we will combine with win-loss data from wikipedia. Let's focus on regular season games from the 2019 season to start.
-```{r data, warning=FALSE}
+```{r data, warning=FALSE,message=FALSE}
 #exp = expenditures (portion of salary caps on each position)
 source_exp_19 <- read_html("https://www.spotrac.com/nfl/positional/breakdown/2019/") %>%
   html_nodes("#main > div > table") %>%
@@ -131,7 +131,7 @@ summary(lm1)
 
 We can see that the relationship is significant, and explains approximately 75% of the variation in win loss percentage.
 
-```{r plot3}
+```{r plot3,warning=FALSE,message=FALSE}
 naruki_is_santa %>%
   ggplot(aes(x = PD, y = PCT)) +
   geom_point() +
