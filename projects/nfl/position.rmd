@@ -12,10 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 Lets start by loading all of our packages at once.
 ```{r packages}
 library(pacman)
-p_load(rvest,tidyverse,data.table,janitor,cowplot)
+p_load(rvest,tidyverse,data.table,janitor,cowplot,rvest,RCurl,ggimage)
 ```
 
-Now let's scrape some data on NFL salaries for 2019, which we will combine with win-loss data from wikipedia. Let's focus on regular season games from the 2019 season to start.
+Now let's scrape some data on NFL salaries for 2019, which we will combine with win-loss data from wikipedia. Let's focus on regular season games from the 2019 season to start. Our three dataframes will be one denoting positional spending, one showing the standings from the regular season, and one including the logos of each team from wikipedia.
 ```{r data, warning=FALSE,message=FALSE}
 #exp = expenditures (portion of salary caps on each position)
 source_exp_19 <- read_html("https://www.spotrac.com/nfl/positional/breakdown/2019/") %>%
@@ -28,7 +28,12 @@ exp_19 <- source_exp_19[[1]] %>%
     Team = NULL
     )
 
-exp_19[2:11] <- lapply(exp_19[2:11],function(x) {as.numeric(gsub("\\s([0-9]+).[0-9]M","",x))})
+exp_19[2:11] <- lapply(
+  exp_19[2:11],
+  function(x) {
+    as.numeric(gsub("\\s([0-9]+).[0-9]M","",x))
+    }
+  )
 
 pos_exp_19 <- exp_19 %>% pivot_longer(!c(team, Players)) %>%
   rename(position = name, salary = value)
@@ -50,11 +55,25 @@ win_19 <- source_win_19[[1]] %>%
 win_19[c(2:4,8,9)] <- lapply(win_19[c(2:4,8,9)],as.integer)
 win_19$team <- gsub("[^[:alpha:]]","",win_19$team)
 
-naruki_is_santa <- left_join(pos_exp_19,win_19)
+url.logo <- getURL(
+  "https://raw.githubusercontent.com/statsbylopez/BlogPosts/master/nfl_teamlogos.csv"
+  )
+
+df.logos <- read.csv(text = url.logo) %>% 
+  mutate(
+    team = gsub(" ","",team)
+  ) %>%
+  tibble()
+df.logos$url[32] <-
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Washington_football_team_wlogo.svg/800px-Washington_football_team_wlogo.svg.png"
+
+naruki_is_santa <- left_join(pos_exp_19,win_19) %>% 
+  left_join(df.logos)
 naruki_is_santa
 ```
 
-Next, lets get a barchart of positional data for each team. To start, p will be our base plot.
+Next, lets get a barchart of positional data for each team. Notice that the data is already in long format, so we can immediately jump into ggplot2.
+
 ```{r plot1}
 #Graph teams based on salary distributions
 p <- naruki_is_santa %>%
@@ -76,7 +95,8 @@ p <- naruki_is_santa %>%
   ylab("Salary Expenditures")
 ```
 
-Next, we will create an x-axis depicting each teams logo. This is implemented through a brute force google image search for each team.
+Next, we will create an x-axis depicting each teams logo. This is implemented through a brute force google image search for each team. Suboptimal? Perhaps, but is the best I got for now!
+
 ```{r pimage, include=FALSE}
 pimage <- axis_canvas(p,axis = 'x')+
   draw_image("https://images.homedepot-static.com/productImages/9a279032-674f-42f9-84c7-d4929ebda81f/svn/red-applied-icon-wall-decals-nfop0103-64_1000.jpg",x = .5) +
@@ -119,7 +139,38 @@ ggdraw(insert_xaxis_grob(p,pimage,position = "bottom"))
 
 This graph is conclusive evidence that the Miami Dolphins tanked. Ripperino to season pass holders.
 
-However, after some testing I've failed to find significant evidence of significant correlation between positional spending of any kind and win-loss percentage. Also, some light literature review seems to infer that Offense and Defense are each generally equivalent in their effect on team success, implying that differences in positional spending effectiveness might depend on the individual team's approach to offense or defense.
+However, after some testing I've failed to find significant evidence of significant correlation between positional spending of any kind and win-loss percentage. Also, some light literature review seems to argue that Offense and Defense are each generally equivalent in their statistical effect on team success, implying that differences in positional spending effectiveness might depend on the individual team's approach to offense or defense. 
+
+```{r plot3}
+p2 <- naruki_is_santa %>%
+  filter(!position == "Total",!team == "Average") %>%
+  mutate(
+    unit = ifelse(
+      position %in% c("QB","RB/FB","WR","TE","OL"),
+      "Offense",
+      ifelse(position == "K/P/LS","Special","Defense")
+    )
+  ) %>%
+  ggplot() +
+  geom_bar(
+    aes(
+      x = team,
+      y = salary,
+      fill = unit
+    ),
+    stat = "identity"
+  ) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title.x = element_blank()
+    ) +
+  ylab("Salary Expenditures")
+ggdraw(insert_xaxis_grob(p2,pimage,position = "bottom"))
+```
+
+
+For example, the Green Bay Packers went 13-3, while the New England Patriots went 12-4. However, Green Bay spent over 100 million USD on their offense, leaving 60 million USD for defense and special teams. However, the patriots spent their money distributed more evenly between their offense and defense, with 79 million and 75 million USD respectively. 
 
 Let's try to use point differential instead, starting with a linear model between point differential and win-loss percentage.
 
@@ -131,24 +182,37 @@ summary(lm1)
 
 We can see that the relationship is significant, and explains approximately 75% of the variation in win loss percentage.
 
-```{r plot3,warning=FALSE,message=FALSE}
-naruki_is_santa %>%
-  ggplot(aes(x = PD, y = PCT)) +
-  geom_point() +
+```{r plot4,warning=FALSE,message=FALSE}
+p3 <- naruki_is_santa %>% 
+  ggplot(aes(x = PD,y = PCT)) +
+  geom_image(mapping = aes(image = url),size = .05) +
   geom_smooth(method = "lm") +
   ylab("Win-Loss Percentage") +
   xlab("Point Differential") +
-  labs(title = "NFL Team Record 2019", subtitle = "Predicted by Point Differential") +
+  labs(
+    title = "NFL Team Record 2019", 
+    subtitle = "Predicted by Point Differential"
+    ) +
   theme(
     plot.title = element_text(hjust = .5),
     plot.subtitle = element_text(hjust = .5)
     )  +
   geom_text(
     aes(150,.4),
-    label = paste("y = ",round(lm1$coefficients[1],digits = 4)," + ",round(lm1$coefficients[2],digits = 4),"x")
+    label = paste(
+      "y = ",
+      round(lm1$coefficients[1],digits = 4),
+      " + ",
+      round(lm1$coefficients[2],digits = 4),
+      "x"
+      )
   ) +
   geom_text(
     aes(150,.35),
-    label = paste("R-squared:",round(summary(lm1)$r.squared,digits = 4))
+    label = paste(
+      "R-squared:",
+      round(summary(lm1)$r.squared,digits = 4)
+      )
   )
+p3
 ```
