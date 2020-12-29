@@ -2,7 +2,7 @@
 title: "US Presidential Poll Errors, 2016 and 2020"
 author: "Ian Bogley"
 date: "11/26/2020"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
