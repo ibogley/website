@@ -3,6 +3,14 @@
   <link rel="stylesheet" type="text/css" href="../site.css">
   <title>Documents</title>
   <head>
+    <style type="text/css">
+      .pdf {display:none;}
+      .show {display: none; }
+      .hide:target + .show {display:block; }
+      .hide:target {display: none; }
+      .hide:target ~ .pdf {display:block; }
+      @media print { .hide, .show { display: none; } }
+    </style>
     <div class="topbanner">
       <img class="profilepic" alt="LinkedIn Profile Picture" src="../profilepic.jpg">
     </div>
@@ -35,14 +43,34 @@
           </p>
         </div>
         <div class="main">
-          <h2 style="text-align:center">Resume: Data focused</h2>
-          <iframe class="pdf" src="https://ibogley.github.io/website/documents/resume_data.pdf"></iframe>
-          <br>
-          <h2 style="text-align:center">Resume: Public policy focused</h2>
-          <iframe class="pdf" src="https://ibogley.github.io/website/documents/resume_policy.pdf"></iframe>
-          <br>
-          <h2 style="text-align:center">Transcript</h2>
-          <iframe class="pdf" src="https://ibogley.github.io/website/documents/transcript.pdf"></iframe>
+          <h2>Documents</h2>
+          <p>
+            Below you will find some of the materials I use to advertise my talents and experience. I have focused my efforts towards using emprical research to help achieve various objectives, leading towards two seperate classes of opportunities.
+          </p>
+          <p>
+            The First is Data Science: the art of gaining insight through statistics. I appreciate the value that research can have in achieving organizational objectives, and believe that the best way to consistently provide positive spillovers to others is through understanding the consequences of our actions. As a data scientist, I view my role as a communicator, allowing teams to make informed decisions on the problems that face them.
+          </p>
+          <div class="single_doc_container">
+            <a href="#hide1" class="hide" id="hide1"><h3>Resume: Data Focused</h3></a>
+            <a href="#show1" class="show" id="show1">Collapse</a>
+            <iframe class="pdf" src="https://ibogley.github.io/website/documents/resume_data.pdf"></iframe>
+          </div>
+          <p>
+            The second is Public Policy: I am passionate about using my experience to better the lives of others. What better way to help others succeed in the modern world than to communicate the external trends that are affecting their communities? Being able to understand what has been happening in the current globalized world is the best weapon against being powerless to change, and public policy itself can add crucial support where needed. I am passionate about topics regarding the alleviation of poverty and economic growth/development, especially in the context of domestic low-skill labor. It is my hope that by gaining knowledge and expertise with how other countries solve these issues, we can find solutions to homelessness and poverty here in the US. From direct government assistance to microfinance, I find many reasons to be optimistic on this front, and it would be an honor to be a part of this movement.
+          </p>
+          <div class="single_doc_container">
+            <a href="#hide2" class="hide" id="hide2"><h3>Resume: Public Policy Focused</h3></a>
+            <a href="#show2" class="show" id="show2">Collapse</a>
+            <iframe class="pdf" src="https://ibogley.github.io/website/documents/resume_policy.pdf"></iframe>
+          </div>
+          <p>
+            Finally, you will find a transcript of my career at the University of Oregon, both undergraduate and graduate. The document is current as of 6/14/21.
+          </p>
+          <div class="single_doc_container">
+            <a href="#hide3" class="hide" id="hide3"><h3>Transcript</h3></a>
+            <a href="#show3" class="show" id="show3">Collapse</a>
+            <iframe class="pdf" src="https://ibogley.github.io/website/documents/transcript.pdf"></iframe>
+          </div>
         </div>
       </div>
   </body>
