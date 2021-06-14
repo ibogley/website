@@ -12,6 +12,14 @@
       <a href="https://ibogley.github.io/website/documents/">Documents</a>
       <a href="https://ibogley.github.io/website/bio/">Biography</a>
     </div>
+    <style type="text/css">
+      .pdf {display:none;}
+      .show {display: none; }
+      .hide:target + .show {display:block; }
+      .hide:target {display: none; }
+      .hide:target ~ .pdf {display:inline; }
+      @media print { .hide, .show { display: none; } }
+    </style>
   </head>
   <body>
     <div class="content">
@@ -38,12 +46,45 @@
           <p>
             Below you'll find various projects I've completed in school, a professional setting, or my within my personal queries. As time goes on this list will grow in size and quality, and I look forward to adding more of my work to this page.
           </p>
-          <iframe class="pdf" src="trade/final.pdf"></iframe>
-          <iframe class="pdf" src="blog/blog_post_final.html"></iframe>
-          <iframe class="pdf" src="transportation/trimet_proposal.pdf"></iframe>
-          <iframe class="pdf" src="sf_women_statues/sf_monuments.pdf"></iframe>
-          <iframe class="pdf" src="survey/survey_2020.pdf"></iframe>
-          <iframe class="pdf" src="case_study/case_study.pdf"></iframe>
+          <div class="single_project_container">
+            <a href="#hide1" class="hide" id="hide1">Coronavirus Lockdowns and Trade Integration</a>
+            <a href="#show1" class="show" id="show1">Collapse</a>
+            <iframe class="pdf" src="trade/final.pdf"></iframe>
+          </div>
+          <p></p>
+          <div class="single_project_container">
+            <a href="#hide2" class="hide" id="hide2">US Presidential Poll Errors, 2016 and 2020</a>
+            <a href="#show2" class="show" id="show2">Collapse</a>
+            <iframe class="pdf" src="blog/blog_post_final.html"></iframe>
+          </div>
+          <p></p>
+          <div class="single_project_container">
+            <a href="#hide3" class="hide" id="hide3">Research Proposal: Real Estate Hedonic Pricing Valuation of Various
+Modes of Public Transportation
+</a>
+            <a href="#show3" class="show" id="show3">Collapse</a>
+            <iframe class="pdf" src="transportation/trimet_proposal.pdf"></iframe>
+          </div>
+          <p></p>
+          <div class="single_project_container">
+            <a href="#hide4" class="hide" id="hide4">EDA in Python: Women Representation in City Property of San Francisco, an
+Exploratoration</a>
+            <a href="#show4" class="show" id="show4">Collapse</a>
+            <iframe class="pdf" src="sf_women_statues/sf_monuments.pdf"></iframe>
+          </div>
+          <p></p>
+          <div class="single_project_container">
+            <a href="#hide5" class="hide" id="hide5">Employee Satisfaction Surveys: Shelter Care Satisfaction Report: 2020
+</a>
+            <a href="#show5" class="show" id="show5">Collapse</a>
+            <iframe class="pdf" src="survey/survey_2020.pdf"></iframe>
+          </div>
+          <p></p>
+          <div class="single_project_container">
+            <a href="#hide6" class="hide" id="hide6">ARIMA Forecast: The End is Here!... Or is it?</a>
+            <a href="#show6" class="show" id="show6">Collapse</a>
+            <iframe class="pdf" src="case_study/case_study.pdf"></iframe>
+          </div>
         </div>
       </div>
   </body>
