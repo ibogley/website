@@ -4,7 +4,7 @@
 }
 
 .topbanner {
-  background: url("uobackground.jpg") no-repeat center;
+  background: url("Campus_Panorama.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -66,6 +66,7 @@ h2 {
 
 ul {
   margin-right: 100px;
+  font-size: 20px;
 }
 
 .button {
@@ -92,8 +93,7 @@ ul {
 }
 
 .side {
-  flex: 1;
-  padding: 1em;
+  flex: 0.5;
   background-color: lightblue;
   text-align: center;
 }
