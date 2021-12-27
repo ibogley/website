@@ -116,3 +116,7 @@ ul {
   border: 5px solid black;
   padding: 2px;
 }
+
+.single_project_container {
+  margin-left: 20px;
+}
