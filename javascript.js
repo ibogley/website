@@ -54,6 +54,7 @@ const button_policyproject_trade = document.getElementById('button_policyproject
 const button_policyproject_balkans = document.getElementById('button_policyproject_balkans');
 const button_policyproject_transportation = document.getElementById('button_policyproject_transportation');
 const button_policyproject_russia = document.getElementById('button_policyproject_russia');
+const button_policyproject_fiscalnote = document.getElementById('button_policyproject_fiscalnote');
 
 const button_document_resume_data = document.getElementById('button_document_resume_data');
 const button_document_resume_policy = document.getElementById('button_document_resume_policy');
@@ -164,6 +165,7 @@ button_document_resume_data.onclick = function() {
     } else {
         iframe_project_display.src = "../document_files/resume_4_data.pdf";
     }
+    console.log("clicked")
 }
 
 button_document_resume_policy.onclick = function() {
