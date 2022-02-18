@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <title>Data</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper_top">
+            <div class="element_name">
+                Ian Bogley
+            </div>
+            <div class="element_contact">
+                <a href="mailto:ianbogley8@gmail.com">Contact Me</a>
+            </div>        
+            <div class="element_nav">
+                <a id="active_nav" href="">Data</a>
+            </div>
+            <div class="element_nav">
+                <a href="../policy/index.html">Policy</a>
+            </div>
+            <div class="element_nav">
+                <a href="../index.html">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="wrapper_analysistext">
+            <h1>Data Visualization</h1>
+            <p>
+                My passion for data stems from the ways we can use it to communicate. An effective visual can intuitively pass along insights that would otherwise require a wall of text which would loose the interest of some. 
+            </p>
+            <div class="wrapper_datavisual1">
+                <img src="visuals/visualization_map.png" alt="" >
+            </div> 
+            <p>
+                As an intern with the International Development Group, I continually found ways to translate statistical relationships to cohesive visuals. For an MCC Road development project, I was tasked with visualizing data in the baseline data report. We were set to improve a family of highways in Southern Niger, which would encourage travel and trade throughout the region. My job was to graph various metrics associated with intitial road users, providing a baseline for future observations during and after construction.
+            </p>           
+            <p>
+                I have also routinely completed animations and visualizations for projects. You can take a look at some here:
+            </p>
+            <br>
+            <br>
+            <h1>Data Analysis/Research</h1>
+            <p>
+                My previous experiences have often hinged on using data to effectively tackle real-world problems. 
+            </p>
+            <p>
+                As an intern with the <strong>International Development Group</strong>, I fulfilled a variety of roles involving data analysis. As a project for the summer, I researched the Barriers to Business in the Western Balkans, communicating my findings to the rest of the company both through a written report and a virtual presentation. This undertaking focused on using data from the World Bank to accurately describe issues with private sector activities on the ground.
+            </p>
+            <p>
+                As a fiscal note analyst with the <strong>Washington State Department of Commerce</strong>, I was introduced to different tax models. I routinely interpreted fiscal notes from the Department of Revenue describing the assumptions and estimations of potential tax revenue impacts.
+            </p>
+            <p>
+                Even in the classroom, I found opportunities to put theory to good use. For my Master's degree, I wrote an econometric report deconstructing the impact of COVID-19 lockdowns on international trade intensity. I used a fixed effect gravity model to identify a 25% drop in export integration and 8% drop in import integration under quarantine. I also wrote a blog post testing whether the polling errors of the US general election were significantly different between 2016 and 2020.
+            </p>
+            <p>
+                My academic curriculum also included exposure to advanced econometrics and machine learning. Specifically, I had the opportunity to work with the TidyModels R package, where I became familiar with the implementation and theory behind models. I coordinated with my classmate Jonas Bowman to complete a project using different models to predict the selection of yearly NBA AllStars with seasonal statistics. I have also completed several projects on my kaggle profile, using machine learning to predict housing prices and titanic survivorship.
+            </p>
+            <p>
+                When given a chance to assist <strong>ShelterCare</strong> with baseline data from employee satisfaction surveys, I visualized and wrote a guide for using it to improve a professional environment. 
+            </p>
+            <h1>Data Collection</h1>
+            <div class="wrapper_visualAFFEC">
+                <img src="visuals/logo_affec.png" alt="">
+            </div>
+            <p>
+                Another relevant adventure was my time with <strong>A Family for Every Child</strong>. According to the Department of Health and Human Services, there are around 400,000 children in foster care in the United States. (https://www.acf.hhs.gov/sites/default/files/documents/cb/afcarsreport28.pdf) Under the supervision of the volunteer coordinator, I led a project to improve Child and Family Matching Events. These seminars, which became virtual due to the COVID-19 Pandemic, were aimed at connecting foster children and potential adopting families. To help make these virtual events a success, I:
+            </p>
+            <ul>
+                <li>Updated the email templates used to market the events.</li>
+                <li>Monitored data on the open and click rates of our email-marketing templates.</li>
+                <li>Wrote survey questions to monitor attendee experiences through ConstantContact.</li>
+                <li>Collected data on the attendance and outcomes of matching events in SalesForce.</li>
+            </ul>
+        </div>
+    </div>
+    <button id="button_projects_open">Projects and Documents</button>
+    <div id="container_modal_projects">
+        <div id="modal_projects">
+            <div id="container_project_display">
+                <iframe id="iframe_project_display" src="../project_files/trade/covid_lockdowns_trade.pdf"></iframe>
+            </div>
+            <div class="wrapper_modal_nav">
+                <div class="container_modal_title">My Projects and Documents</div>
+                <div class="wrapper_modal_categories">
+                    <button class="button_modal_category" id="button_modal_data">Data</button>
+                    <button class="button_modal_category" id="button_modal_policy">Policy</button>
+                    <button class="button_modal_category" id="button_modal_documents">Documents</button>
+                </div>
+                <div class="wrapper_projects" id="wrapper_data_projects">
+                    <ul>
+                        <li><button id="button_dataproject_trade">COVID-19 Lockdowns on International Trade Intensity</button></li>
+                        <li><button id="button_dataproject_polls">US Presidential Poll Errors, 2016 vs 2020</button></li>
+                        <li><button id="button_dataproject_nba">Predicting NBA AllStars with TidyModels</button></li>
+                        <li><button id="button_dataproject_titanic">Kaggle: Predicting Titanic Survivors with TidyModels</button></li>
+                        <li><button id="button_dataproject_emp">Employee Satisfaction Survey: Baseline Data Report</button></li>
+                        <li><button id="button_dataproject_arima">ARIMA Forecast of Retail Sales</button></li>
+                    </ul>
+                </div>
+                <div class="wrapper_projects" id="wrapper_policy_projects">
+                    <ul>
+                        <li><button id="button_policyproject_trade">COVID-19 Lockdowns on International Trade Intensity</button></li>
+                        <li><button id="button_policyproject_balkans">Barriers to Business in Albania, Serbia, and North Macedonia</button></li>
+                        <li><button id="button_policyproject_transportation">Research Proposal: Real Estate Hedonic Pricing Valuation of Access to Public Transportation</button></li>
+                        <li><button id="button_policyproject_russia">Corruption in Russia</button> </li>
+                        <li><button id="button_policyproject_lobbying">Lobbying in the United States</button></li>
+                        <li><button id="button_policyproject_fiscalnote">Local Government Fiscal Note, SSB5722</button></li>
+                    </ul>
+                </div>
+                <div class="wrapper_projects" id="wrapper_documents">
+                    <ul>
+                        <li><button id="button_document_resume_data">Resume: Data focus</button></li>
+                        <li><button id="button_document_resume_policy">Resume: Policy focus</button></li>
+                        <li><button id="button_document_resume_energy">Resume: Energy focus</button></li>
+                        <li><button id="button_document_transcript">Transcript</button></li>
+                        <li><button id="button_document_letter">Letter of Recommendation</button></li>
+                    </ul>
+                </div>
+            </div>
+            <button id="button_projects_close">Close</button>
+        </div>
+    </div>
+    <footer>
+        <button class="button_github" onclick="window.open('https://github.com/ibogley', '_blank')"></button>
+        <button class="button_linkedin" onclick="window.open('https://www.linkedin.com/in/ian-bogley-857088196/', '_blank')"></button>
+        <button class="button_kaggle" onclick="window.open('https://www.kaggle.com/ianbogley', '_blank')"></button>
+    </footer>
+    <script src="../javascript.js"></script>
+</body>
+</html>
