@@ -78,6 +78,7 @@ img {
 .element_contact > a {
 	color: white;
 	text-decoration: none;
+	font-size:2vw;
 }
 
 .element_contact > a:hover {
@@ -96,6 +97,7 @@ img {
 	text-decoration: none;
 	border-radius: 1vh;
 	border: 1px;
+	font-size:2vw;
 }
 
 .element_nav a:hover {
