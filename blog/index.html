@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <title>Blog</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper_top">
+            <div class="element_name">
+                Ian Bogley
+            </div>
+            <div class="element_contact">
+                <a href="mailto:ianbogley8@gmail.com"> Contact Me </a>
+            </div>     
+            <div class="element_nav">
+                <a id="active_nav" href="">Blog</a>
+            </div>     
+            <div class="element_nav">
+                <a href="../data/index.html"> Data </a>
+            </div>
+            <div class="element_nav">
+                <a href="../policy/index.html"> Policy </a>
+            </div>
+            <div class="element_nav">
+                <a href="../index.html" href="">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="wrapper_blogtext">
+            <h1>My Blog</h1>
+            <p>Here I will post pieces related to my passions/interests as they arrive. Feel free to take a look!</p>
+            <br><br>
+        </div>
+        <div class="wrapper_blog">
+            <div id="container_blog">
+                <iframe id="iframe_blog_display" src="Blog1_2020Inflation.html"></iframe>
+            </div>
+            <div id="container_blognav">
+                <button id="BlogPost1">Blog 1: 2021 Inflation Spike Components</button>
+            </div>
+        </div>
+    </div>
+    <button id="button_projects_open">Projects and Documents</button>
+    <div id="container_modal_projects">
+        <div id="modal_projects">
+            <div id="container_project_display">
+                <iframe id="iframe_project_display" src="../project_files/trade/covid_lockdowns_trade.pdf"></iframe>
+            </div>
+            <div class="wrapper_modal_nav">
+                <div class="container_modal_title">My Projects and Documents</div>
+                <div class="wrapper_modal_categories">
+                    <button class="button_modal_category" id="button_modal_data">Data</button>
+                    <button class="button_modal_category" id="button_modal_policy">Policy</button>
+                    <button class="button_modal_category" id="button_modal_documents">Documents</button>
+                </div>
+                <div class="wrapper_projects" id="wrapper_data_projects">
+                    <ul>
+                        <li><button id="button_dataproject_trade">COVID-19 Lockdowns on International Trade Intensity</button></li>
+                        <li><button id="button_dataproject_polls">US Presidential Poll Errors, 2016 vs 2020</button></li>
+                        <li><button id="button_dataproject_nba">Predicting NBA AllStars with TidyModels</button></li>
+                        <li><button id="button_dataproject_titanic">Kaggle: Predicting Titanic Survivors with TidyModels</button></li>
+                        <li><button id="button_dataproject_emp">Employee Satisfaction Survey: Baseline Data Report</button></li>
+                        <li><button id="button_dataproject_arima">ARIMA Forecast of Retail Sales</button></li>
+                    </ul>
+                </div>
+                <div class="wrapper_projects" id="wrapper_policy_projects">
+                    <ul>
+                        <li><button id="button_policyproject_trade">COVID-19 Lockdowns on International Trade Intensity</button></li>
+                        <li><button id="button_policyproject_balkans">Barriers to Business in Albania, Serbia, and North Macedonia</button></li>
+                        <li><button id="button_policyproject_transportation">Research Proposal: Real Estate Hedonic Pricing Valuation of Access to Public Transportation</button></li>
+                        <li><button id="button_policyproject_russia">Corruption in Russia</button> </li>
+                        <li><button id="button_policyproject_lobbying">Lobbying in the United States</button></li>
+                        <li><button id="button_policyproject_fiscalnote">Local Government Fiscal Note, SSB5722</button></li>
+                    </ul>
+                </div>
+                <div class="wrapper_projects" id="wrapper_documents">
+                    <ul>
+                        <li><button id="button_document_resume_data">Resume: Data focus</button></li>
+                        <li><button id="button_document_resume_policy">Resume: Policy focus</button></li>
+                        <li><button id="button_document_resume_energy">Resume: Energy focus</button></li>
+                        <li><button id="button_document_transcript">Transcript</button></li>
+                        <li><button id="button_document_letter">Letter of Recommendation</button></li>
+                    </ul>
+                </div>
+            </div>
+            <button id="button_projects_close">Close</button>
+        </div>
+    </div>
+    <footer>
+        <button class="button_github" onclick="window.open('https://github.com/ibogley', '_blank')"></button>
+        <button class="button_linkedin" onclick="window.open('https://www.linkedin.com/in/ian-bogley-857088196/', '_blank')"></button>
+        <button class="button_kaggle" onclick="window.open('https://www.kaggle.com/ianbogley', '_blank')"></button>
+    </footer>
+    <script src="../javascript.js"></script>
+</body>
+</html>
