@@ -1,6 +1,8 @@
 # My Website
 This repo includes all the necessary files for my personal website.
 
+Everything is written in HTML/CSS/JS.
+
 # File Directory Map
 
 ```bash
