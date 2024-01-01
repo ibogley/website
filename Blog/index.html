@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <title>Home</title>
+    <title>Blog</title>
 </head>
 <body>
     <header>
@@ -16,58 +16,41 @@
             </div>
             <div class="element_contact">
                 <a href="mailto:ianbogley8@gmail.com"> Contact Me </a>
-            </div>          
+            </div>     
             <div class="element_nav">
-                <a href="blog/index.html"> Blog </a>
+                <a id="active_nav" href="">Blog</a>
+            </div>     
+            <div class="element_nav">
+                <a href="../data/index.html"> Data </a>
             </div>
             <div class="element_nav">
-                <a href="data/index.html"> Data </a>
+                <a href="../policy/index.html"> Policy </a>
             </div>
             <div class="element_nav">
-                <a href="policy/index.html"> Policy </a>
-            </div>
-            <div class="element_nav">
-                <a id="active_nav" href="">Home</a>
+                <a href="../index.html" href="">Home</a>
             </div>
         </div>
     </header>
     <div class="content">
-        <div class="wrapper_profilepic">
-            <img class="img_profilepic" src="profilepic.jpg" alt="">
+        <div class="wrapper_blogtext">
+            <h1>My Blog</h1>
+            <p>Here I will post pieces related to my passions/interests as they arrive. Feel free to take a look!</p>
+            <br><br>
         </div>
-        <div class="element_hometext">
-            <p>
-                I pride myself on being a coachable and versatile professional with proven expertise in data analysis and communication. Throughout my career, my positions have focused on translating highly technical information into intuitive formats.
-            </p>
-            <p>
-                Master of Science in Applied Economics, University of Oregon 2021: Subject areas focused on advanced econometrics, economic development, regional growth, and international trade.
-            </p>
-            <h3>Professional skillset:</h3>
-            <ul>
-                <li><strong>Programming and other digital languages:</strong> R, Python, SQL, Git Bash, HTML, JavaScript</li>
-                <li><strong>Sectoral Policy Expertise:</strong> economic development, regional growth, international trade, infrastructure, broadband internet access, energy policy, utilities, financial institutions, political economy analysis and quality of governance.</li>
-                <li><strong>Data Analysis:</strong> Data collection, data scrubbing/wrangling, visualization, research design and implementation. Advanced econometrics, machine learning, and big data.</li>
-            </ul>
-            <h3>Previous Research:</h3>
-            <ul>
-                <li>Barriers to Business in Albania, Serbia, and North Macedonia</li>
-                <li>General Election Polling Errors (Hypothesis testing)</li>
-                <li>Predicting Survivors from the Titanic (Machine Learning, R)</li>
-                <li>Predicting NBA AllStar Selections (Machine Learning, R)</li>
-                <li>Employee Satisfaction Survey, Basline Data Report (Surveys)</li>
-                <li>ARIMA Forecast of Retail Sales (Forecasting)</li>
-                <li>Coronavirus Lockdowns and International Trade (Policy Analysis, International Trade, R)</li>
-                <li>Corruption in Russia (Political Economy Analysis)</li>
-                <li>Lobbying in the United States (Political Economy Analysis)</li>
-                <li>Research Proposal: Hedonic Valuation of Access to Public Transportation (Housing, Research Design, Regression Analysis)</li>
-            </ul>
+        <div class="wrapper_blog">
+            <div id="container_blog">
+                <iframe id="iframe_blog_display" src="Blog1_2020Inflation.html"></iframe>
+            </div>
+            <div id="container_blognav">
+                <button id="BlogPost1">Blog 1: 2021 Inflation Spike Components</button>
+            </div>
         </div>
     </div>
     <button id="button_projects_open">Projects and Documents</button>
     <div id="container_modal_projects">
         <div id="modal_projects">
             <div id="container_project_display">
-                <iframe id="iframe_project_display" src="project_files/trade/covid_lockdowns_trade.pdf"></iframe>
+                <iframe id="iframe_project_display" src="../project_files/trade/covid_lockdowns_trade.pdf"></iframe>
             </div>
             <div class="wrapper_modal_nav">
                 <div class="container_modal_title">My Projects and Documents</div>
@@ -114,6 +97,6 @@
         <button class="button_linkedin" onclick="window.open('https://www.linkedin.com/in/ian-bogley-857088196/', '_blank')"></button>
         <button class="button_kaggle" onclick="window.open('https://www.kaggle.com/ianbogley', '_blank')"></button>
     </footer>
-    <script src="javascript.js"></script>
+    <script src="../javascript.js"></script>
 </body>
 </html>

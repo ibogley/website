@@ -199,3 +199,6 @@ button_document_letter.onclick = function() {
         iframe_project_display.src = "../document_files/letter_of_recommendation.pdf";
     }
 }
+
+
+/*Blog Button Functions*/
