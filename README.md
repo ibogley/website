@@ -25,6 +25,7 @@ Everything is written in HTML/CSS/JS.
 │   ├── Ian Bogley Letter of Recommendation.docx
 │   ├── hs_transcript.pdf
 │   ├── letter_of_recommendation.pdf
+|   ├── resume.pdf
 │   ├── resume_4_data.pdf
 │   ├── resume_4_energy.pdf
 │   ├── resume_4_policy.pdf
