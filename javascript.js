@@ -56,9 +56,7 @@ const button_policyproject_transportation = document.getElementById('button_poli
 const button_policyproject_russia = document.getElementById('button_policyproject_russia');
 const button_policyproject_fiscalnote = document.getElementById('button_policyproject_fiscalnote');
 
-const button_document_resume_data = document.getElementById('button_document_resume_data');
-const button_document_resume_policy = document.getElementById('button_document_resume_policy');
-const button_document_resume_energy = document.getElementById('button_document_resume_energy');
+const button_document_resume = document.getElementById('button_document_resume');
 const button_document_transcript = document.getElementById('button_document_transcript');
 const button_document_letter = document.getElementById('button_document_letter');
 
@@ -159,29 +157,13 @@ button_policyproject_fiscalnote.onclick = function() {
     }
 }
 
-button_document_resume_data.onclick = function() {
+button_document_resume.onclick = function() {
     if (page_title == "home") {
-        iframe_project_display.src = "document_files/resume_4_data.pdf";
+        iframe_project_display.src = "document_files/resume.pdf";
     } else {
-        iframe_project_display.src = "../document_files/resume_4_data.pdf";
+        iframe_project_display.src = "../document_files/resume.pdf";
     }
     console.log("clicked")
-}
-
-button_document_resume_policy.onclick = function() {
-    if (page_title == "home") {
-        iframe_project_display.src = "document_files/resume_4_policy.pdf";
-    } else {
-        iframe_project_display.src = "../document_files/resume_4_policy.pdf";
-    }
-}
-
-button_document_resume_energy.onclick = function() {
-    if (page_title == "home") {
-        iframe_project_display.src = "document_files/resume_4_energy.pdf";
-    } else {
-        iframe_project_display.src = "../document_files/resume_4_energy.pdf";
-    }
 }
 
 button_document_transcript.onclick = function() {
