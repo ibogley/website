@@ -1,3 +1,15 @@
+/*Blog Functionality*/
+const iframe_blog_display = document.getElementById('iframe_blog_display')
+const button_blogpost1 = document.getElementById('BlogPost1')
+const button_blogpost2 = document.getElementById('BlogPost2')
+
+button_blogpost_1.onclick = function() {
+    iframe_blog_display.src = "Blog1_2020Inflation.html"
+}
+button_blogpost_2.onclick = function() {
+    iframe_blog_display.src = 'Blog2_Vectors.html'
+}
+
 /*Open buttons*/
 const container_modal_projects = document.getElementById('container_modal_projects');
 const button_projects_open = document.getElementById('button_projects_open');
